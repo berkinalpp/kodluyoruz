@@ -151,7 +151,7 @@ let allCategory =menu.map(item => { // --> Burada bütün category içeriğini b
   }
 
   function getKorea() { // getKorea fonksiyonunda önce menu dizisini filter methodu ile categorysi sadece Korea olanları alıp daha sonra map ediyoruz.
-    sectionDOM.innerHTML =""
+    sectionDOM.innerHTML ="" // -> Burada sectionDOM içeriğini boşaltıyoruz ki var olan elemanların üzerine yazmasın diye 
     let korea = menu.filter(item => item.category === "Korea").map(item => {
       sectionDOM.innerHTML += `<div class="menu-items col-lg-6 col-sm-12">
       <img src=${item.img} alt=${item.title} class="photo">
@@ -167,7 +167,7 @@ let allCategory =menu.map(item => { // --> Burada bütün category içeriğini b
   }
 
   function getJapan() {  // --> getJapan fonksiyonunda önce menu dizisini filter methodu ile categorysi sadece Japan olanları alıp daha sonra map ediyoruz.
-    sectionDOM.innerHTML =""
+    sectionDOM.innerHTML ="" 
     let japan = menu.filter(item => item.category === "Japan").map(item => {
       sectionDOM.innerHTML += `<div class="menu-items col-lg-6 col-sm-12">
       <img src=${item.img} alt=${item.title} class="photo">
@@ -182,7 +182,7 @@ let allCategory =menu.map(item => { // --> Burada bütün category içeriğini b
     })
   }
   function getChina() {  // getChina fonksiyonunda önce menu dizisini filter methodu ile categorysi sadece China olanları alıp daha sonra map ediyoruz.
-    sectionDOM.innerHTML =""
+    sectionDOM.innerHTML ="" 
     let china = menu.filter(item => item.category === "China").map(item => {
       sectionDOM.innerHTML += `<div class="menu-items col-lg-6 col-sm-12">
       <img src=${item.img} alt=${item.title} class="photo">
