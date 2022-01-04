@@ -14,7 +14,8 @@ function App() {
 
 <footer className="info">
 	<p>Click to edit a todo</p>
-	<p>Created by <a href="https://d12n.me/">Berkin Alp</a></p>
+	<p>Created by <a href="https://d12n.me/">Dmitry Sharabin</a></p>
+	<p>Modified to React App by <a href="https://github.com/berkinalpp">Berkin Alp</a></p>
 	<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
 </footer>
 </>
