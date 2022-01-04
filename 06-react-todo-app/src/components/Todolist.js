@@ -42,16 +42,18 @@ function Todolist() {
 		setActiveCategory(category);
 	  }
 
-	const completeAllTodos = () => {
-		const completeAllTodos=todos.map(todo => 
+	const toggleAllTodos = () => {
+		const allTodoIsTrue = todos.every(todo => todo.isComplete === true);
+		const toggleAllTodos = todos.map(todo => 
 			{
-
-		todo.isComplete = true
-		return todo
-		});
-		console.log(completeAllTodos);
-		setTodos(completeAllTodos);
-		
+				if(todo.isComplete === false) {
+					todo.isComplete = true
+				} else if(allTodoIsTrue) {
+					todo.isComplete = false
+				}
+				return todo;
+			})
+		setTodos(toggleAllTodos);
 	}
 	const removeCompletedTodos = () => {
 		let completedArr = [...todos].filter(todo => todo.isComplete === false);
@@ -67,7 +69,7 @@ function Todolist() {
 
 	<section className="main">
 
-	<input className="toggle-all" id="toggle-all" type="checkbox" onChange={completeAllTodos} />
+	<input className="toggle-all" id="toggle-all" type="checkbox" onChange={toggleAllTodos} />
 		<label htmlFor="toggle-all">
 			Mark all as complete
 		</label>

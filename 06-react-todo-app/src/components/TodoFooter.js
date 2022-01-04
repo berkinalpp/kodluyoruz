@@ -12,19 +12,19 @@ function TodoFooter({todos,removeCompletedTodos,categoryHandler,activeCategory})
 
 		<ul className="filters">
 			<li>
-			<a class={activeCategory === "All" ? 'selected' : ''} onClick={()=> categoryHandler("All")}>All</a>
+			<a className={activeCategory === "All" ? 'selected' : ''} onClick={()=> categoryHandler("All")}>All</a>
 			</li>
 			<li>
-				<a class={activeCategory === "Active" ? 'selected' : ''} onClick={()=> categoryHandler("Active")}>Active</a>
+				<a className={activeCategory === "Active" ? 'selected' : ''} onClick={()=> categoryHandler("Active")}>Active</a>
 			</li>
 			<li>
-			<a class={activeCategory === "Completed" ? 'selected' : ''} onClick={() => categoryHandler("Completed")}>Completed</a>
+			<a className={activeCategory === "Completed" ? 'selected' : ''} onClick={() => categoryHandler("Completed")}>Completed</a>
 			</li>
 		</ul>
 
 
 		{todos.some( todo => todo.isComplete === true) && (
-        <button class="clear-completed" onClick={removeCompletedTodos}>
+        <button className="clear-completed" onClick={removeCompletedTodos}>
           Clear completed
         </button>
       )}
