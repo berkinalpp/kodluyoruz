@@ -19,7 +19,7 @@ describe('Emoji functionality tests', () => {
     })
     test('The emojis which was entered in the search bar must been correctly rendered' ,() => {
         const emojiName = 'Joy'
-        const joyElement =screen.getByText('Joy')
+        const joyElement =screen.getByText(emojiName)
         userEvent.type(input,emojiName);
         expect(joyElement.toBeInDocument)
 
