@@ -1,18 +1,25 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Header from './Header'
 import Todo from './Todo'
 import TodoFooter from './TodoFooter'
 
 
 function Todolist() {
-	const [todos,setTodos] = useState([])
+	
+	const savedTodos = JSON.parse(localStorage.getItem('todos'))
+	const [todos,setTodos] = useState(savedTodos ? savedTodos : []);
 	const [activeCategory, setActiveCategory] = useState("All");
+
+	useEffect(() => {
+		localStorage.setItem('todos',JSON.stringify(todos));
+	},[todos])
 
 	const addTodo = (todo) => {
 		if(!todo.text || /^\s*$/.test(todo.text)) {
 			return;
 		}
-		const newTodos = [todo,...todos];
+
+		const newTodos = [todo,...todos]
 		setTodos(newTodos);
 		
 	}
@@ -64,7 +71,7 @@ function Todolist() {
     return (
         <>
 	<Header 
-	onSubmit={addTodo}
+	addTodo={addTodo}
 	/>
 
 	<section className="main">

@@ -5,7 +5,7 @@ function Todo({todos,setCompleteTodo,removeTodo}) {
     return (
         <>
 
-        {
+		{
 		todos.map((todo) => (
 			<li key={todo.id} className={todo.isComplete ? 'completed' : ''}   >
 				<div className="view">

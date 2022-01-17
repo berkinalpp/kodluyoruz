@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 
-function Header({onSubmit}) {
+function Header({addTodo}) {
     const [input,setInput] = useState('')
 
     const handleChange = (e) => {
@@ -8,12 +8,15 @@ function Header({onSubmit}) {
     }
 
    const handleSubmit = (e) => {
+      
        e.preventDefault();
-       onSubmit({
-           id:Math.floor(Math.random()*10000),
-           text:input,
-           isComplete:false
-        });
+
+       addTodo({
+        id:Math.floor(Math.random()*10000),
+        text:input,
+        isComplete:false
+     });
+     
         setInput('')
    }
 
