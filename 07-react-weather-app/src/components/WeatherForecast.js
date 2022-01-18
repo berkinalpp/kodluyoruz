@@ -4,29 +4,34 @@ import { useWeather } from '../context/WeatherContext'
  function WeatherForecast() {
 
     const {weatherData} = useWeather()
-    const {result} =weatherData;
-    const cityName = weatherData.city[0].toUpperCase() + weatherData.city.substring(1);
-        return (
+    const {result} = weatherData
+   
+
+    return (
+
+    weatherData.success ?
+    (       
             <div className="card-container">
       {
       result.map((result,key) =>
       (
+        
         <div className="card" key = {key}>
                <div className="card-info">
-                   <h1>{cityName}</h1>
-                   <h3>{result.day}</h3>
-                   <span>{result.degree}C°</span>
+                   <h1>{weatherData.city[0].toUpperCase() + weatherData.city.substring(1)}</h1>
+                   <h3>{key === 0 ? 'Today ' : result.day}</h3>
+                   <h3>{Math.round(result.degree)}°</h3>
                    <img className="icon" src={result.icon} alt="" />
                    <h3>{result.status} / {result.description}</h3>
-                   <span>Min Temp: {result.min}C°</span>
-                   <span>Max Temp: {result.max}C°</span>
+                   <span>Min Temp: {Math.round(result.min)}°</span>
+                   <span>Max Temp: {Math.round(result.max)}°</span>
                </div>
            </div>
       
-      ) )
+      ))
       }
        
-      </div>
+      </div> ) : (<div style={{color:'red',marginRight:'3rem', marginTop:'1rem'}}>Incorrect City Name ! </div>)
       
     )
 }

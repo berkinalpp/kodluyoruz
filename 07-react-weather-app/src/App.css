@@ -6,7 +6,11 @@
   box-sizing:border-box;
 }
 body {
-  font-family:'Space Mono',arial,sans-serif
+  font-family:'Space Mono',arial,sans-serif;
+  background-color: #222831;
+  color:#EEE;
+  height: 100%;
+
 }
 .App {
   display:flex;
@@ -14,8 +18,6 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #222831;
-  color:#EEE;
   height:100vh;
 }
 
@@ -24,7 +26,7 @@ body {
   font-family:'Space Mono',arial,sans-serif;
   font-weight: bold;
   padding:.5rem;
-  width: 15rem;
+  width: 75%;
   background: #88A5BB;
   background: -moz-linear-gradient(left, #88A5BB 0%, #00ADB5 49%, #D1EEEB 100%);
   background: -webkit-linear-gradient(left, #88A5BB 0%, #00ADB5 49%, #D1EEEB 100%);
@@ -42,6 +44,7 @@ body {
   background-color: #EEEEEE;
   opacity:.5;
   transition:all .5s;
+  cursor: pointer;
 }
 .searchBtn:hover {
   background-color: #20B7BE;
@@ -51,6 +54,12 @@ body {
   display:flex;
   justify-content: space-evenly;
   width: 100%;
+  flex-wrap:wrap;
+}
+.card:first-child {
+ background-color: #00ADB5;
+ color:#393E46;
+ opacity: .7;
 }
 .card{
   margin-top:2rem;
@@ -78,4 +87,19 @@ body {
 .icon {
   height:50px;
   width:50px;
+}
+
+/* Media Queries */ 
+
+@media screen and (max-width:1024px) {
+  .App {
+    height:100%;
+    margin-top:5rem;
+  }
+  .card-container{
+    width: 80%;
+  }
+  .card {
+    width:100%;
+  }
 }
